@@ -4,7 +4,7 @@
   <sql id="Base_Column_List" >
     id, userName, password, age
   </sql>
-  <select id="getRuleByToken" resultType="java.util.List" parameterType="java.lang.String" >
+  <select id="getRuleByToken" resultType="java.util.Map" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from user_t

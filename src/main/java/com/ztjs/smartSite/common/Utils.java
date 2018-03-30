@@ -1,4 +1,4 @@
-package com.ztjs.smartSite.controller;
+package com.ztjs.smartSite.common;
 
 import java.util.List;
 import java.util.Map;
@@ -24,7 +24,9 @@ public class Utils {
 	 */
 	@Autowired
 	private UtilsService utilsService;
-	public void getRuleByToken(String token) {
+	public List<Map<String, Object>> getRuleByToken(String token) {
+		List<Map<String, Object>> a=utilsService.getRuleByToken("1");
+		return a;
 
 	}
 }

@@ -18,6 +18,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.ztjs.smartSite.common.HttpClientSSLUtils;
+import com.ztjs.smartSite.common.Utils;
 import com.ztjs.smartSite.service.UtilsService;
 
 @Controller
@@ -131,12 +132,10 @@ public class VideoController {
 	 * @throws Exception 
 	 */
 	@Autowired
-	private UtilsService utilsService;
+	private Utils utils;
 	@RequestMapping(value="/getDefaultUnit",method=RequestMethod.POST)
 	@ResponseBody
 	public JSONObject getDefaultUnit(HttpServletRequest request) throws Exception{
-		List<Map<String, Object>> a=utilsService.getRuleByToken("1");
-		System.out.println(a);
 		String url = OPENAPI_IP_PORT_HTTP + ITF_ADDRESS_GET_GetDefaultUnit;
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("appkey", APPKEY);// …Ë÷√APPKEY
