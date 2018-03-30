@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztjs.smartSite.dao.UtilsDao" >
+  <sql id="Base_Column_List" >
+    id, userName, password, age
+  </sql>
+  <select id="getRuleByToken" resultType="java.util.List" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_t
+    where userName = #{token,jdbcType=VARCHAR}
+  </select>
+</mapper>
